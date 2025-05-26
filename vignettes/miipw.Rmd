@@ -1,0 +1,89 @@
+---
+title: "Introduction to MIIPW"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to MIIPW}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+# Introduction
+This is a vignette for our package 'MIIPW'. It contains function for fitting GEE model for repeated measurement data. We have included mainly five function
+
+* meanscore
+* sipw
+* aipw
+* misipw
+* miaipw
+* QICmiipw
+
+We have included a repeated measured gene expression data in our package. Models are fitted to the dataset available in our package as below. 
+```{r}
+library(MIIPW)
+data("srdata1")
+head(srdata1)
+apply(srdata1,2,anyNA)
+mice::md.pattern(srdata1[,-c(1,2)],plot = TRUE)
+```
+
+# Meanscore method
+Here we have considered the response model for __C6kine__, depending on the other covariates in dataset srdata1. Formula object below defines the model struture. Imputation model for the methods described in \link{MeanScore} can be specified through the predictor matrix function available in mice package.
+```{r}
+formula<-C6kine~ActivinRIB+ActivinRIIA+ActivinRIIAB+Adiponectin+AgRP+ALCAM
+pMat<-mice::make.predictorMatrix(srdata1[names(srdata1)%in%all.vars(formula)])
+m1<-MeanScore(data=srdata1,
+formula<-formula,id='ID',
+visit='Visit',family='gaussian',init.beta = NULL,
+init.alpha=NULL,init.phi=1,tol=.00001,weights = NULL,
+corstr = 'exchangeable',maxit=50,m=2,pMat=pMat)
+summary_meanscore(m1)
+```
+The summary_meanscore() and summary_ipw() summarises the results from fitted object obtained from meanscore and ipw functions. It provides the list of parameter estimates, wald statistics, p-value, phi value. 
+
+# SIPW, AIPW, miSIPW, miAIPW
+The inverse probability weighted method can be used through the function \code{SIPW,AIPW,miSIPW,miAIPW}. Similarly we need to specify a predictor matrix for the imputation of score fucntion missing due to incomplete data. The \code{pMat} argument takes the predictor matrix to be used in \link{mice} inside the function. The demo code for this model as follows :
+```{r eval=FALSE}
+m2<-SIPW(data=srdata1,formula<-formula,id='ID',
+visit='Visit',family='gaussian',corstr = 'exchangeable',maxit=5)
+
+m3<-AIPW(data=srdata1,
+formula<-formula,id='ID',
+visit='Visit',family='gaussian',init.beta = NULL,
+init.alpha=NULL,init.phi=1,tol=.00001,weights = NULL,
+corstr = 'exchangeable',maxit=50,m=3,pMat=pMat)
+
+m4<-miSIPW(data=srdata1,
+formula<-formula,id='ID',
+visit='Visit',family='gaussian',init.beta = NULL,
+init.alpha=NULL,init.phi=1,tol=0.001,weights = NULL,
+corstr = 'exchangeable',maxit=50,m=2,pMat=pMat)
+
+m1<-miAIPW(data=srdata1,
+formula<-formula,id='ID',
+ visit='Visit',family='gaussian',init.beta = NULL,
+init.alpha=NULL,init.phi=1,tol=.00001,weights = NULL,
+corstr = 'exchangeable',maxit=4,m=2,pMat=pMat)
+
+```
+# Model Selection Crietrion QIC
+The \code{QICmiipw} function provides the list of various model selection criterion based on quasi liklihood. The demo code is as follows
+```{r}
+m1<-MeanScore(data=srdata1,
+             formula<-formula,id='ID',
+             visit='Visit',family='gaussian',init.beta = NULL,
+             init.alpha=NULL,init.phi=1,tol=.00001,weights = NULL,
+             corstr = 'exchangeable',maxit=50,m=2,pMat=pMat)
+ m11<-MeanScore(data=srdata1,
+             formula<-formula,id='ID',
+             visit='Visit',family='gaussian',init.beta = NULL,
+             init.alpha=NULL,init.phi=1,tol=.00001,weights = NULL,
+            corstr = 'independent',maxit=50,m=2,pMat=pMat)
+QICmiipw(model.R=m1,model.indep=m11,family="gaussian")
+##
+```
