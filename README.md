@@ -1,18 +1,37 @@
-# MIIPW
+# MIIPW: GEE with Missing Data Using Mean Score, IPW, and Multiple Imputation
+<img src="man/figures/MIIPWlogo.png" align="right" alt="MIIPW logo" width="200">
 
-**MIIPW** (Mean Score and Inverse Probability Weighted Methods with Multiple Imputation) is an R package for analyzing longitudinal or repeated measures data with missing responses or covariates. It implements advanced methods such as inverse probability weighting (IPW), mean score estimation, and multiple imputation to provide robust parameter estimates using GEE (Generalized Estimating Equations).
+<!-- badges: start -->
 
-## Key Features
+[![License](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![CRAN status](https://www.r-pkg.org/badges/version/MIIPW)](https://CRAN.R-project.org/package=MIIPW)
+[![R build status](https://github.com/yourusername/MIIPW/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/yourusername/MIIPW/actions)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 
-- Implements **Augmented IPW (AIPW)** and **Simple IPW (SIPW)** for longitudinal GEE models.
-- Provides **Mean Score Estimation** with multiple imputation to address missing data in covariates or response.
-- Includes functions for fitting **marginal models** using semiparametric methods.
-- Supports various correlation structures: `"independence"`, `"exchangeable"`, `"AR-1"`, and `"unstructured"`.
-- Functions for **model selection** using QIC (Quasi-likelihood under the Independence Model Criterion).
-- Includes internal tools for parameter estimation using **Fisher Scoring**.
+<!-- badges: end -->
 
-## Installation
+<br/>
+
+> **MIIPW** is an R package for fitting Generalized Estimating Equations (GEE) when data is missing at random (MAR), using a combination of **Mean Score (MS)**, **Inverse Probability Weighting (IPW)**, and **Multiple Imputation (MI)** techniques.
+
+---
+
+## ✨ Features
+
+The MIIPW package supports robust marginal modeling with missing outcome and covariate data by integrating:
+
+- 📌 **Mean Score Approach** for consistent estimation under missingness
+- 🧮 **IPW Estimation** using modeled response or missingness probabilities
+- ♻️ **Multiple Imputation (MI)** integration for general missing data structures
+- 📈 **Flexible model specification** with various correlation structures
+- 📦 Easy interface using `gee()` style model formulas
+
+---
+
+## 📦 Installation
+
+### Via `pak` (Recommended)
 
 ```r
-# Install from GitHub (requires remotes or devtools)
-# remotes::install_github("kumarbhrigu/MIIPW")
+install.packages("pak")
+pak::pak("yourusername/MIIPW")
