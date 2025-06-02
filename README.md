@@ -5,7 +5,7 @@
 
 [![License](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![CRAN status](https://www.r-pkg.org/badges/version/MIIPW)](https://CRAN.R-project.org/package=MIIPW)
-[![R build status](https://github.com/yourusername/MIIPW/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/yourusername/MIIPW/actions)
+[![R build status](https://github.com/yourusername/MIIPW/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kumarbhrigu/MIIPW/actions)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 
 <!-- badges: end -->
@@ -28,10 +28,13 @@ The MIIPW package supports robust marginal modeling with missing outcome and cov
 
 ---
 
-## 📦 Installation
-
-### Via `pak` (Recommended)
+## 🛠 Installation
 
 ```r
-install.packages("pak")
-pak::pak("yourusername/MIIPW")
+# Install from CRAN (when available)
+install.packages("MIIPW")
+
+# Or install the development version from GitHub:
+# install.packages("remotes")
+remotes::install_github("kumarbhrigu/MIIPW")
+```
