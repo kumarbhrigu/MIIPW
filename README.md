@@ -5,7 +5,6 @@
 
 [![License](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![CRAN status](https://www.r-pkg.org/badges/version/MIIPW)](https://CRAN.R-project.org/package=MIIPW)
-[![R build status](https://github.com/yourusername/MIIPW/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kumarbhrigu/MIIPW/actions)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 
 <!-- badges: end -->
