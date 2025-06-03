@@ -5,7 +5,7 @@
 
 [![License](https://img.shields.io/badge/license-GPL--3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![CRAN status](https://www.r-pkg.org/badges/version/MIIPW)](https://CRAN.R-project.org/package=MIIPW)
-![Monthly Downloads](https://cranlogs.r-pkg.org/badges/last-month/MIIPW)
+[![Total downloads](https://cranlogs.r-pkg.org/badges/grand-total/MIIPW)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 
 <!-- badges: end -->

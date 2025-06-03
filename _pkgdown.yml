@@ -1,0 +1,17 @@
+logo: man/figures/MIIPWlogo.png
+
+home:
+  title: MIIPW
+  links:
+    - text: View on CRAN
+      href: https://cran.r-project.org/package=MIIPW
+
+template:
+  bootstrap: 5
+  light-switch: true
+  params:
+    bootswatch: minty
+
+authors:
+  sidebar:
+    roles: [aut, cre, ctb]
