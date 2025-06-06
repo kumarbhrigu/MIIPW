@@ -176,24 +176,24 @@ predictor matrix function available in mice package.</p>
 <span><span class="co">#&gt;     maxit = 50, m = 2, pMat = pMat)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $inference</span></span>
-<span><span class="co">#&gt;     Estimates           SE    z value   Pr(&gt;|z|)</span></span>
-<span><span class="co">#&gt; 1 662.3578376 2.307361e+02  2.8706296 0.00409655</span></span>
-<span><span class="co">#&gt; 2   0.4514776 4.312176e-01  1.0469830 0.29510741</span></span>
-<span><span class="co">#&gt; 3   0.1520377 6.571145e-01  0.2313717 0.81702608</span></span>
-<span><span class="co">#&gt; 4   0.0464820 9.996215e-03  4.6499599 0.00000332</span></span>
-<span><span class="co">#&gt; 5  -0.0163545 1.217138e-02 -1.3436845 0.17905044</span></span>
-<span><span class="co">#&gt; 6   0.1720169 2.992796e-01  0.5747700 0.56544685</span></span>
-<span><span class="co">#&gt; 7  -1.3461084 4.677462e-01 -2.8778609 0.00400382</span></span>
+<span><span class="co">#&gt;      Estimates           SE    z value   Pr(&gt;|z|)</span></span>
+<span><span class="co">#&gt; 1 702.74940843 217.56470996  3.2300708 0.00123760</span></span>
+<span><span class="co">#&gt; 2   0.45327136   0.43275143  1.0474174 0.29490713</span></span>
+<span><span class="co">#&gt; 3   0.25694846   0.61413970  0.4183876 0.67566372</span></span>
+<span><span class="co">#&gt; 4   0.04779139   0.01021799  4.6771804 0.00000291</span></span>
+<span><span class="co">#&gt; 5  -0.01986800   0.01301468 -1.5265838 0.12686454</span></span>
+<span><span class="co">#&gt; 6   0.04432666   0.28163061  0.1573929 0.87493521</span></span>
+<span><span class="co">#&gt; 7  -1.38200800   0.44911426 -3.0771857 0.00208965</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $phi</span></span>
-<span><span class="co">#&gt; [1] 318848.3</span></span>
+<span><span class="co">#&gt; [1] 327300.9</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $Ralpha</span></span>
-<span><span class="co">#&gt;             [,1]        [,2]        [,3]        [,4]</span></span>
-<span><span class="co">#&gt; [1,]  1.00000000 -0.09583794 -0.09583794 -0.09583794</span></span>
-<span><span class="co">#&gt; [2,] -0.09583794  1.00000000 -0.09583794 -0.09583794</span></span>
-<span><span class="co">#&gt; [3,] -0.09583794 -0.09583794  1.00000000 -0.09583794</span></span>
-<span><span class="co">#&gt; [4,] -0.09583794 -0.09583794 -0.09583794  1.00000000</span></span>
+<span><span class="co">#&gt;           [,1]      [,2]      [,3]      [,4]</span></span>
+<span><span class="co">#&gt; [1,]  1.000000 -0.099879 -0.099879 -0.099879</span></span>
+<span><span class="co">#&gt; [2,] -0.099879  1.000000 -0.099879 -0.099879</span></span>
+<span><span class="co">#&gt; [3,] -0.099879 -0.099879  1.000000 -0.099879</span></span>
+<span><span class="co">#&gt; [4,] -0.099879 -0.099879 -0.099879  1.000000</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"class")</span></span>
 <span><span class="co">#&gt; [1] "summary_meanscore"</span></span></code></pre></div>
@@ -249,7 +249,7 @@ based on quasi liklihood. The demo code is as follows</p>
 <span>            corstr <span class="op">=</span> <span class="st">'independent'</span>,maxit<span class="op">=</span><span class="fl">50</span>,m<span class="op">=</span><span class="fl">2</span>,pMat<span class="op">=</span><span class="va">pMat</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/QICmiipw.html">QICmiipw</a></span><span class="op">(</span>model.R<span class="op">=</span><span class="va">m1</span>,model.indep<span class="op">=</span><span class="va">m11</span>,family<span class="op">=</span><span class="st">"gaussian"</span><span class="op">)</span></span>
 <span><span class="co">#&gt;       QIC      QICu Quasi Lik </span></span>
-<span><span class="co">#&gt;  169.5101  485.0000  -78.5000</span></span>
+<span><span class="co">#&gt;  168.5137  485.0000  -78.5000</span></span>
 <span><span class="co">##</span></span></code></pre></div>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
